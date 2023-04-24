@@ -7,10 +7,11 @@ jobs:
     steps:
       - name: Checkout Respository
         uses: actions/checkout@v3
-      - name: Setup python and install requirements
+      - name: Setup python
         uses: actions/setup-python@v3
         with:
           python-version: '3.9'
+      - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Train model
         run: python src/train.py
